@@ -9,6 +9,7 @@ namespace ConsoleApp3.Models
 {
     internal class AggregateFunctions
     {
+
         public void PerformDataAggregation(string outputGetList)
         {
             string[] tokens = outputGetList.Split("\r\n"); //using new line as delimiter
@@ -56,32 +57,29 @@ namespace ConsoleApp3.Models
 
 
 
-            //Console.Write("\n\nFinding directory name : Contains With letter=>");
-            //string letter = Console.ReadLine().ToUpper(); //reads starting letters entered by the user
-            //for (j = 0; j < count; j++)
-            //{
-            //    string namesearch = tokens[j];
-            //    namematch = Regex.Match(namesearch, @"\b[A-Za-z ]+\b");
-            //    string search = namematch.Value;
-            //    string fullname = Regex.Replace(search, @"^ ", ""); //removes blank space infront of each name
-            //    fullname = fullname.ToUpper();
-            //    if (fullname.Contains(letter))
-            //    {
-            //        counter++;
-            //        Console.Write("\n{0}", fullname);
-            //    }
-            //}
-            //double sum = 0;
-            //for (int i = 0; i < count; i++)
-            //{
-            //    sum += numbers[i];
-            //}
-            //double average = sum / count;
-            //Console.WriteLine("\n\n\nAverage of Student ID: " + average);
+            Console.Write("\n\nFinding directory name : Contains With letter=>");
+            string letter = Console.ReadLine().ToUpper(); //reads starting letters entered by the user
+            for (j = 0; j < count; j++)
+            {
+                string namesearch = tokens[j];
+                namematch = Regex.Match(namesearch, @"\b[A-Za-z ]+\b");
+                string search = namematch.Value;
+                string fullname = Regex.Replace(search, @"^ ", ""); //removes blank space infront of each name
+                fullname = fullname.ToUpper();
+                if (fullname.Contains(letter))
+                {
+                    counter++;
+                    Console.Write("\n{0}", fullname);
+                }
+            }
+            double sum = 0;
+            for (int i = 0; i < count; i++)
+            {
+                sum += numbers[i];
+            }
+            double average = sum / count;
+            Console.WriteLine("\n\n\nAverage of Student ID: " + average);
         }
-
-
-
     }
 }
 
